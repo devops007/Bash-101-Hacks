@@ -70,8 +70,9 @@ echo "Backup of $UASERNAME home directory completed."
  * USERNAME是保存需要备份的用户名的变量
  * BACKUP_LOCATION是保存备份位置的变量
 
-<br/>
+
 关于"#!/bin/bash"行，以下的方式也是可以的：
+
  * #!/bin/bash 作为第一行，表示用使用bash shell去执行脚本，作为最好的练习方式，建议使用此方式
  * #!bin/sh 作为第一行，将使用/bin/sh（sh其实是bash的软链接）去执行脚本中的shell命令
  * #在第一行完全不声明"#!"符号，则默认使用bash去执行，因为bash是Linux的默认的shell
