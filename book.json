@@ -1,0 +1,45 @@
+{
+    "title": "Bash-101-Hacks",
+    "author": "devops007",
+    "links": {
+        "sidebar": {
+            "Home": "https://linuxer.io"
+        }
+    },
+    "plugins": [
+        "emphasize",
+        "theme-comscore",
+        "-prism",
+        "-prism-themes",
+        "highlight",
+        "simple-page-toc",
+        "anchors",
+        "anchor-navigation-ex",
+        "terminal",
+        "-splitter"
+    ],
+    "pluginsConfig": {
+        "prism": {
+            "css": ["prism-themes/themes/prism-duotone-sea.css"]
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "anchor-navigation-ex": {
+            "isRewritePageTitle": true,
+            "isShowTocTitleIcon": true,
+            "float": {
+                "showLevelIcon": true,
+                "tocLevel1Icon": "fa fa-hand-o-right",
+                "tocLevel2Icon": "fa fa-hand-o-right",
+                "tocLevel3Icon": "fa fa-hand-o-right"
+            }
+        },
+        "terminal": {
+            "copyButtons": true,
+            "fade": false,
+            "style": "classic"
+        }
+    }
+}

@@ -1,0 +1,1104 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. Sed命令语法 · Sed-and-Awk-101-Hacks</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="devops007">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="script.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://linuxer.io" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一章 Sed语法和基本命令</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="syntax.html">
+            
+                <a href="syntax.html">
+            
+                    
+                    1. Sed命令语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="script.html">
+            
+                <a href="script.html">
+            
+                    
+                    2. Sed脚本流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="pattern.html">
+            
+                <a href="pattern.html">
+            
+                    
+                    3. 打印模式空间(p 命令)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="delete.html">
+            
+                <a href="delete.html">
+            
+                    
+                    4. 删除行(d 命令)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="write.html">
+            
+                <a href="write.html">
+            
+                    
+                    5. 模式空间写入文件(w 命令)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二章 Sed替换命令</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../part2/">
+            
+                <a href="../part2/">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../part2/syntax.html">
+            
+                <a href="../part2/syntax.html">
+            
+                    
+                    6. Sed替换命令语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../part2/global.html">
+            
+                <a href="../part2/global.html">
+            
+                    
+                    7. 全局标志（g flag）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../part2/number.html">
+            
+                <a href="../part2/number.html">
+            
+                    
+                    8. 数字标志（1,2,3...flag）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../part2/print.html">
+            
+                <a href="../part2/print.html">
+            
+                    
+                    9. 打印标志（p falg）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../part2/write.html">
+            
+                <a href="../part2/write.html">
+            
+                    
+                    10. 写标志（w falg）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../part2/ignore.html">
+            
+                <a href="../part2/ignore.html">
+            
+                    
+                    11. 忽略大小写标志（i falg）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../part2/exec.html">
+            
+                <a href="../part2/exec.html">
+            
+                    
+                    12. 执行标志（e falg）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../part2/combine.html">
+            
+                <a href="../part2/combine.html">
+            
+                    
+                    13. sed替换标志组合使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../part2/delimiter.html">
+            
+                <a href="../part2/delimiter.html">
+            
+                    
+                    14. sed替换定界符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../part2/multiple.html">
+            
+                <a href="../part2/multiple.html">
+            
+                    
+                    15. 多个替换命令作用到同一行上
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../part2/pattern.html">
+            
+                <a href="../part2/pattern.html">
+            
+                    
+                    16. &魅力 - 引用匹配模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../part2/single_group.html">
+            
+                <a href="../part2/single_group.html">
+            
+                    
+                    17. 分组替换（单一组）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../part2/multiple_group.html">
+            
+                <a href="../part2/multiple_group.html">
+            
+                    
+                    18. 分组替换（多组）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../part2/string.html">
+            
+                <a href="../part2/string.html">
+            
+                    
+                    19.  Gnu Sed {replacement-string}标志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三章 Sed正则表达式</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../part3/">
+            
+                <a href="../part3/">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../part3/syntax.html">
+            
+                <a href="../part3/syntax.html">
+            
+                    
+                    20. 正则表达式基本原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../part3/additional.html">
+            
+                <a href="../part3/additional.html">
+            
+                    
+                    21. 扩展正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../part3/substitution.html">
+            
+                <a href="../part3/substitution.html">
+            
+                    
+                    22. Sed基于正则表达式的替换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四章 Sed的执行</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../part4/">
+            
+                <a href="../part4/">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../part4/multiplecmd.html">
+            
+                <a href="../part4/multiplecmd.html">
+            
+                    
+                    23. 命令行中的多个Sed命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../part4/script.html">
+            
+                <a href="../part4/script.html">
+            
+                    
+                    24. Sed脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../part4/comment.html">
+            
+                <a href="../part4/comment.html">
+            
+                    
+                    25. Sed注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../part4/interpreter.html">
+            
+                <a href="../part4/interpreter.html">
+            
+                    
+                    26. Sed解释执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../part4/modifying.html">
+            
+                <a href="../part4/modifying.html">
+            
+                    
+                    27. 直接将修改应用到输入文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第五章 Sed扩展命令</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../part5/">
+            
+                <a href="../part5/">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../part5/append.html">
+            
+                <a href="../part5/append.html">
+            
+                    
+                    28. 行后追加（a 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../part5/insert.html">
+            
+                <a href="../part5/insert.html">
+            
+                    
+                    29. 行前追加（i 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../part5/change.html">
+            
+                <a href="../part5/change.html">
+            
+                    
+                    30. 改变行（c 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../part5/combine.html">
+            
+                <a href="../part5/combine.html">
+            
+                    
+                    31. a、i、c 命令结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../part5/hidden.html">
+            
+                <a href="../part5/hidden.html">
+            
+                    
+                    32. 打印隐藏字符（l 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../part5/linenumber.html">
+            
+                <a href="../part5/linenumber.html">
+            
+                    
+                    33. 打印行号（= 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../part5/case.html">
+            
+                <a href="../part5/case.html">
+            
+                    
+                    34. 改变大小写（y 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../part5/multiple.html">
+            
+                <a href="../part5/multiple.html">
+            
+                    
+                    35. 指定多个输入文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../part5/quit.html">
+            
+                <a href="../part5/quit.html">
+            
+                    
+                    36. 退出（q 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../part5/read.html">
+            
+                <a href="../part5/read.html">
+            
+                    
+                    37. 读取额外文件（r 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../part5/unix.html">
+            
+                <a href="../part5/unix.html">
+            
+                    
+                    38. 模拟Unix命令（cat、grep、head）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../part5/option.html">
+            
+                <a href="../part5/option.html">
+            
+                    
+                    39. sed命令行参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../part5/patter.html">
+            
+                <a href="../part5/patter.html">
+            
+                    
+                    40. 打印模式空间（n 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第六章 Sed的保持空间和模式空间命令</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../part6/README.md">
+            
+                <span>
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../part6/swap.md">
+            
+                <span>
+            
+                    
+                    41. 用保持空间交换模式空间（x 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../part6/copyp2h.md">
+            
+                <span>
+            
+                    
+                    42. 拷贝模式空间到保持空间（h 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../part6/appendp2h.md">
+            
+                <span>
+            
+                    
+                    43. 追加模式空间到保持空间（H 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../part6/copyh2p.md">
+            
+                <span>
+            
+                    
+                    44. 拷贝保持空间到模式空间（g 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../part6/appendh2p">
+            
+                <span>
+            
+                    
+                    45. 追加保持空间到模式空间（G 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第七章 Sed多命令行和循环</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../part7/README.md">
+            
+                <span>
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../part7/append.md">
+            
+                <span>
+            
+                    
+                    46. 追加下一行到模式空间（N 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../part7/print.md">
+            
+                <span>
+            
+                    
+                    47. 在MultiLine中打印第一行（P 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../part7/delete.md">
+            
+                <span>
+            
+                    
+                    48. 在MultiLine中删除第一行（D 命令）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../part7/loop_and_branch.md">
+            
+                <span>
+            
+                    
+                    49. 循环和分支（b 命令和 ：label）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../part7/loop_t.md">
+            
+                <span>
+            
+                    
+                    50. 循环使用t命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1. Sed命令语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#1-sed-&#x547D;&#x4EE4;&#x8BED;&#x6CD5;"><b>1. </b>1. Sed &#x547D;&#x4EE4;&#x8BED;&#x6CD5;</a></li></ul></div><a href="#1-sed-&#x547D;&#x4EE4;&#x8BED;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="1-sed-&#x547D;&#x4EE4;&#x8BED;&#x6CD5;"><a name="1-sed-&#x547D;&#x4EE4;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#1-sed-&#x547D;&#x4EE4;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1. 1. Sed &#x547D;&#x4EE4;&#x8BED;&#x6CD5;</h1>
+<p>&#x672C;&#x8282;&#x7684;&#x76EE;&#x7684;&#x662F;&#x8BA9;&#x4F60;&#x719F;&#x6089;sed&#x8BED;&#x6CD5;&#x548C;&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x4F1A;&#x89E3;&#x91CA;sed&#x7684;&#x5355;&#x4E2A;&#x547D;&#x4EE4;
+&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p><strong>&#x57FA;&#x672C;&#x7684;sed&#x8BED;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code>sed [options] {sed-commands} {input-file}
+</code></pre><p>sed&#x4E00;&#x6B21;&#x4ECE;{input-file}&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BE5;&#x884C;&#x4E0A;&#x6267;&#x884C;{sed-commands}&#x3002;<br><br>
+&#x5B83;&#x4ECE;{input-file}&#x8BFB;&#x53D6;&#x7B2C;&#x4E00;&#x884C;&#x5E76;&#x5728;&#x8BE5;&#x884C;&#x6267;&#x884C;{sed-commands}&#x3002;&#x63A5;&#x7740;&#x8BFB;&#x53D6;
+&#x7B2C;&#x4E8C;&#x884C;&#x5E76;&#x6267;&#x884C;{sed-commands}&#xFF0C;sed&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x5230;&#x8FBE;&#x6587;&#x4EF6;
+{input-file}&#x7684;&#x672B;&#x5C3E;&#x3002;<br><br>
+sed&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x53EF;&#x9009;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;[options]&#x4F20;&#x9012;&#x7ED9;sed&#x3002;<br><br></p>
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x57FA;&#x672C;&#x7684;sed&#x8BED;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x7684;sed&#x793A;&#x4F8B;&#x6253;&#x5370;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x884C;&#x3002;</p>
+<pre><code>sed -n &apos;p&apos; /etc/passwd
+</code></pre><p>&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x5173;&#x6CE8;{sed-commands}&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;sed&#x547D;&#x4EE4;&#x6216;&#x8005;&#x591A;&#x4E2A;sed&#x547D;&#x4EE4;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;
+&#x591A;&#x4E2A;sed&#x547D;&#x4EE4;&#x7EC4;&#x5408;&#x5199;&#x5165;sed&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x5E76;&#x901A;&#x8FC7;-f&#x9009;&#x9879;&#x6307;&#x5B9A;&#x8BE5;&#x811A;&#x672C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><strong>&#x57FA;&#x672C;&#x7684;sed&#x8BED;&#x6CD5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;sed&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF1A;</strong></p>
+<pre><code>sed [options] -f {sed-commands-in-a-file} {input-file}
+</code></pre><p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x6253;&#x5370;&#x4EE5;root&#x548C;nobody&#x5F00;&#x5934;&#x7684;&#x884C;&#x3002;</p>
+<pre><code>$ vi test-script.sed
+/^root/ p
+/^nobody/ p
+$ sed -n -f test-script.sed /etc/passwd
+</code></pre><p>&#x5728;&#x6267;&#x884C;&#x591A;&#x4E2A;sed&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x6307;&#x5B9A;-e&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><strong>&#x57FA;&#x672C;&#x7684;sed&#x8BED;&#x6CD5;&#x4F7F;&#x7528;-e&#x53C2;&#x6570;&#xFF1A;</strong></p>
+<pre><code>sed [options] -e {sed-command-1} -e {sed-command-2} {input-file}
+</code></pre><p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x57FA;&#x672C;&#x8BED;&#x6CD5;,&#x5B83;&#x5C06;&#x6253;&#x5370;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x4EE5;root&#x548C;nobody&#x5F00;&#x5934;&#x7684;&#x6240;&#x6709;&#x884C;</p>
+<pre><code>sed -n -e &apos;/^root/ p&apos; -e &apos;/^nobody/ p&apos; /etc/passwd
+</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;-e&#x53C2;&#x6570;&#x5728;&#x5355;&#x884C;&#x4E0A;&#x6267;&#x884C;&#x591A;&#x6761;sed&#x547D;&#x4EE4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7528; &apos;\&apos; &#x5C06;&#x4ED6;&#x4EEC;&#x5206;&#x6210;&#x591A;&#x884C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#x3002;</p>
+<pre><code>sed -n \
+-e &apos;/^root/ p&apos; \
+-e &apos;/^nobody/ p&apos; \
+/etc/passwd
+</code></pre><p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6307;&#x5B9A;&#x591A;&#x4E2A;sed&#x547D;&#x4EE4;&#xFF0C;&#x901A;&#x8FC7;{}&#x5C06;&#x4ED6;&#x4EEC;&#x5206;&#x7EC4;&#xFF1A;</p>
+<p><strong>&#x57FA;&#x672C;&#x7684;sed&#x8BED;&#x6CD5;{}&#xFF1A;</strong></p>
+<pre><code>sed [options] &apos;{
+    sed-command-1
+    sed-command-2
+}&apos; input-file
+</code></pre><p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x6B64;&#x7248;&#x672C;&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF0C;&#x540C;&#x6837;&#x662F;&#x6253;&#x5370;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x4EE5;root&#x548C;nobody&#x5F00;&#x5934;&#x7684;&#x6240;&#x6709;&#x884C;&#xFF1A;</p>
+<pre><code>sed -n &apos;{
+    /^root/ p
+    /^nobody/ p
+}&apos;  /etc/passwd
+</code></pre><p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;sed&#x4ECE;&#x4E0D;&#x4FEE;&#x6539;&#x539F;&#x59CB;&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x603B;&#x662F;&#x6253;&#x5370;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FDD;&#x5B58;&#x66F4;&#x6539;&#xFF0C;
+&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x663E;&#x793A;&#x6307;&#x5B9A; &gt;filename.txt &#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#x53BB;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 说明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="script.html" class="navigation navigation-next " aria-label="Next page: 2. Sed脚本流程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. Sed命令语法","level":"2.2","depth":1,"next":{"title":"2. Sed脚本流程","level":"2.3","depth":1,"path":"part1/script.md","ref":"part1/script.md","articles":[]},"previous":{"title":"说明","level":"2.1","depth":1,"path":"part1/README.md","ref":"part1/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["emphasize","theme-comscore","-prism","-prism-themes","highlight","simple-page-toc","anchors","anchor-navigation-ex","terminal","-splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-duotone-sea.css"]},"emphasize":{},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"isRewritePageTitle":true,"showLevel":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":true,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"}},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"classic"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"devops007","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sed-and-Awk-101-Hacks","links":{"sidebar":{"Home":"https://linuxer.io"}},"gitbook":"*"},"file":{"path":"part1/syntax.md","mtime":"2018-04-17T07:12:10.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-27T12:53:04.102Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

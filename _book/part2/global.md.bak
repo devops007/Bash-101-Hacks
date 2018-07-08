@@ -1,0 +1,28 @@
+# 全局标志（g falg）
+
+Sed替换标志g代表全局，默认的sed替换命令只会替换每行{original-string}第一次出现的地方，
+如果你想替换一行中所有出现的{original-string}为{replacement-string}，你需要使用全局标志g。<br/>
+
+__替换每行中第一次出现小写字母a为大写字母A__:
+
+```
+**[terminal]
+$ sed 's/a/A/' employee.txt
+101,John Doe,CEO
+102,J**[error A]son Smith,IT Manager
+103,R**[errorA]j Reddy,Sysadmin
+104,An**[error A]nd Ram,Developer
+105,J**[error A]ne Miller,Sales Manager
+```
+
+__替换每行中所有出现的小写字母a为大写字母A__:
+
+```
+**[terminal]
+$ sed 's/a/A/g' employee.txt
+101,John Doe,CEO
+102,J**[error A]son Smith,IT M**[error A]n**[error A]ger
+103,R**[error A]j Reddy,Sys**[error A]dmin
+104,An**[error A]nd R**[error A]m,Developer
+105,J**[error A]ne Miller,S**[error A]les M**[error A]n**[error A]ger
+```
